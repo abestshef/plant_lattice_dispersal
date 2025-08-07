@@ -215,7 +215,7 @@ for i in range(100):
     BETAS=BstoreI[choice]
     GAMMA=GstoreI[choice]
 
-    xxpb=solve_ivp(pairs,[ts2[0],ts2[-1]],IC,t_eval=ts2,method='LSODA')
+    xxpb=solve_ivp(pairs,[ts2[0],ts2[-1]],IC,t_eval=ts2,method='Radau')
     ts=np.concatenate((t0,ts2))
     xxp0=np.concatenate((s0,xxpb.y[0]))
     xxp1=np.concatenate((e0,xxpb.y[1]))
@@ -434,4 +434,5 @@ ax.set_ylabel('Proportion Infected')
 ax.set_xlim([0,85])
 
 plt.tight_layout()
+
 
